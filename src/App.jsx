@@ -28,7 +28,16 @@ const Total = ({ units }) => {
   return <p>Number of units {total}</p>
 }
 
+const Footer = ({ fullName, courseCode, section }) => (
+  <footer>
+    {fullName} - {courseCode} - {section}
+  </footer>
+)
+
 const App = () => {
+  const fullName = 'Eron Asia'
+  const courseCode = 'CSIT340'
+  const section = 'G6'
   const course = {
     name: 'BS Information Technology',
     parts: [
@@ -52,6 +61,11 @@ const App = () => {
       <Header course={course.name} />
       <Content parts={course.parts} />
       <Total units={course.parts} />
+      <Footer
+        fullName={fullName}
+        courseCode={courseCode}
+        section={section}
+      />
     </div>
   )
 }
