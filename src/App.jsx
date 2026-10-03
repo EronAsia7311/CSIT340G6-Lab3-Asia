@@ -29,27 +29,29 @@ const Total = ({ units }) => {
 }
 
 const App = () => {
-  const course = 'BS Information Technology'
-  const parts = [{
-    name: 'Networking 1',
-    units: 3
-  }, 
-  {
-    name: 'Data Analytics 1',
-    units: 3
-  }, 
-  {
-    name: 'Capstone and Research 2',
-    units: 3
+  const course = {
+    name: 'BS Information Technology',
+    parts: [
+      {
+        name: 'Networking 1',
+        units: 3
+      },
+      {
+        name: 'Data Analytics 1',
+      units: 3
+      }, 
+      {
+        name: 'Capstone and Research 2',
+        units: 3
+      }
+    ]
   }
-]
-  parts.reduce((sum, part) => sum + part.units, 0)
 
   return (
     <div>
-      <Header course={course} />
-      <Content parts={parts} />
-      <Total units={parts} />
+      <Header course={course.name} />
+      <Content parts={course.parts} />
+      <Total units={course.parts} />
     </div>
   )
 }
