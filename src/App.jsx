@@ -7,15 +7,21 @@ const Header = ({ course }) => {
   )
 }
 
-const Content = ({ parts }) => (
-  <>
-    {parts.map((part) => (
-      <p key={part.name}>
-        {part.name} {part.exercises}
-      </p>
-    ))}
-  </>
+const Part = ({ name, units }) => (
+  <p>
+    {name} {units}
+  </p>
 )
+
+const Content = ({ parts }) => {
+  return (
+    <div>
+      <Part name={parts[0].name} units={parts[0].units} />
+      <Part name={parts[1].name} units={parts[1].units} />
+      <Part name={parts[2].name} units={parts[2].units} />
+    </div>
+  )
+}
 
 const Total = ({ units }) => <p>Number of units {units}</p>
 
